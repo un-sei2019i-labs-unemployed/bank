@@ -1,9 +1,7 @@
 
 package data;
 
-/**
- * @author Jhon Acosta
- */
+
 public class Usuario {
     
     private int cedula;
@@ -37,7 +35,14 @@ public class Usuario {
         this.contraseña = contraseña;
     }
     
-    
+    public String validateHash (String hash){        
+        String id = "Select hash where hash = hash";        
+        if(!id.isEmpty()){
+            return id;
+        }else{
+            return null;
+        }
+    }
     
     
 }
