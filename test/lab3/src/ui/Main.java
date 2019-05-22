@@ -1,5 +1,6 @@
 
-package logic;
+package ui;
+import logic.Usuarios;
 
 /*
  * @author Jhon Acosta
