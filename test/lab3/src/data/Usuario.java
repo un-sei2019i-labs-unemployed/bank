@@ -35,12 +35,19 @@ public class Usuario {
         this.contraseña = contraseña;
     }
     
-    public String validateHash (String hash){        
-        String id = "Select hash where hash = hash";        
-        if(!id.isEmpty()){
-            return id;
+    public long getHash(int size, int intentos){
+        return (this.nombre.hashCode()+this.cedula+this.contraseña-1+intentos)%size;
+    }
+    
+    public int validateHash (int intentos, int size){
+        boolean isRepeated=false;
+        long hash=this.getHash(size,intentos);
+        //función para revisar si el hashCode ya existe...
+        
+        if(hash>=0&&!isRepeated){
+            return intentos; //retorna el número de intentos para hacer hash
         }else{
-            return null;
+            return validateHash(intentos+1, size);
         }
     }
     
