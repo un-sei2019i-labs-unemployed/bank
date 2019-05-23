@@ -6,13 +6,9 @@ public class Usuarios {
     
     private Usuario user;
     
-    public boolean handle (String hash){        
-        String id = user.validateHash(hash);
-        if (!id.isEmpty()) {
-            return true; // Ya existe el hash
-        }else{
-            return false; // No existe el hash
-        }
+    public boolean handle (int size){        
+        int tries = user.validateHash(1,size);
+        return tries<2; // Ya existe el hash cuando retorna más de un intento de hash
     }
     
 }
