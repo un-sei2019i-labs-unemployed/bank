@@ -1,4 +1,4 @@
-package com.unemployed.bankapp.ui.login;
+package com.unemployed.bankapp.logic.users;
 
 /**
  * Class exposing authenticated user details to the UI.

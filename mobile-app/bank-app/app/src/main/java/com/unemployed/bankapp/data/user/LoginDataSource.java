@@ -1,6 +1,4 @@
-package com.unemployed.bankapp.data;
-
-import com.unemployed.bankapp.data.model.LoggedInUser;
+package com.unemployed.bankapp.data.user;
 
 import java.io.IOException;
 

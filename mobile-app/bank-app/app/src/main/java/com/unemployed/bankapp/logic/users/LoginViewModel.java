@@ -1,14 +1,17 @@
-package com.unemployed.bankapp.ui.login;
+package com.unemployed.bankapp.logic.users;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Patterns;
 
-import com.unemployed.bankapp.data.LoginRepository;
-import com.unemployed.bankapp.data.Result;
-import com.unemployed.bankapp.data.model.LoggedInUser;
+import com.unemployed.bankapp.data.user.LoginRepository;
+import com.unemployed.bankapp.data.user.Result;
+import com.unemployed.bankapp.data.user.LoggedInUser;
 import com.unemployed.bankapp.R;
+import com.unemployed.bankapp.logic.users.LoggedInUserView;
+import com.unemployed.bankapp.logic.users.LoginFormState;
+import com.unemployed.bankapp.logic.users.LoginResult;
 
 public class LoginViewModel extends ViewModel {
 

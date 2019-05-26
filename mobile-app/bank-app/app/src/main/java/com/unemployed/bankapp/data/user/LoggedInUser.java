@@ -1,4 +1,4 @@
-package com.unemployed.bankapp.data.model;
+package com.unemployed.bankapp.data.user;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

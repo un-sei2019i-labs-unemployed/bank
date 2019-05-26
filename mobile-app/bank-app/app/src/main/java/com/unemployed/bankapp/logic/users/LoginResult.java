@@ -1,6 +1,8 @@
-package com.unemployed.bankapp.ui.login;
+package com.unemployed.bankapp.logic.users;
 
 import android.support.annotation.Nullable;
+
+import com.unemployed.bankapp.logic.users.LoggedInUserView;
 
 /**
  * Authentication result : success (user details) or error message.

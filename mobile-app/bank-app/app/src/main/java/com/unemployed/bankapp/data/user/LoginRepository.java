@@ -1,6 +1,4 @@
-package com.unemployed.bankapp.data;
-
-import com.unemployed.bankapp.data.model.LoggedInUser;
+package com.unemployed.bankapp.data.user;
 
 /**
  * Class that requests authentication and user information from the remote data source and

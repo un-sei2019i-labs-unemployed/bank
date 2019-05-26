@@ -1,11 +1,12 @@
-package com.unemployed.bankapp.ui.login;
+package com.unemployed.bankapp.logic.users;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-import com.unemployed.bankapp.data.LoginDataSource;
-import com.unemployed.bankapp.data.LoginRepository;
+import com.unemployed.bankapp.data.user.LoginDataSource;
+import com.unemployed.bankapp.data.user.LoginRepository;
+import com.unemployed.bankapp.logic.users.LoginViewModel;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

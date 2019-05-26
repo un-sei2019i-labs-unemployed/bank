@@ -1,4 +1,4 @@
-package com.unemployed.bankapp.ui.login;
+package com.unemployed.bankapp.logic.users;
 
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
@@ -19,8 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unemployed.bankapp.R;
-import com.unemployed.bankapp.ui.login.LoginViewModel;
-import com.unemployed.bankapp.ui.login.LoginViewModelFactory;
+import com.unemployed.bankapp.logic.users.LoggedInUserView;
+import com.unemployed.bankapp.logic.users.LoginFormState;
+import com.unemployed.bankapp.logic.users.LoginResult;
+import com.unemployed.bankapp.logic.users.LoginViewModel;
+import com.unemployed.bankapp.logic.users.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
