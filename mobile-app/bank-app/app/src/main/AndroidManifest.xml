@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".logic.users.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:parentActivityName=".logic.users.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.unemployed.bankapp.logic.users.LoginActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".logic.users.MenuActivity" />
+        <activity
             android:name=".logic.users.LoginActivity"
             android:label="@string/app_name">
             <intent-filter>

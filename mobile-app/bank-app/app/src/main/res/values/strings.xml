@@ -9,20 +9,24 @@
 
     <!-- Strings related to login -->
     <string name="action_log_in">LogIn</string>
-        <string name="welcome">"Welcome!"</string>
-        <string name="invalid_username">Not a valid Id</string>
-        <string name="invalid_password">Password must be 6 digits long</string>
-        <string name="login_failed">"LogIn failed"</string>
-        <string name="change_password">Change Password</string>
-        <string name="incorrect_password">"Incorrect Password"</string>
-        <string name="incorrect_psid">"Incorrect Personal ID"</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid Id</string>
+    <string name="invalid_password">Password must be 6 digits long</string>
+    <string name="login_failed">"LogIn failed"</string>
+    <string name="change_password">Change Password</string>
+    <string name="incorrect_password">"Incorrect Password"</string>
+    <string name="incorrect_psid">"Incorrect Personal ID"</string>
 
     <!-- Strings related to signup -->
     <string name="action_sign_up">SignUp</string>
-        <string name="invalid_name">Not a valid Name</string>
-        <!-- invalid username  ALREADY DECLARED -->
-        <!-- invalid password  ALREADY DECLARED -->
-        <string name="request_sended">"Your SingUp request is already sent for checking"</string>
+    <string name="invalid_name">Not a valid Name</string>
+    <!-- invalid username  ALREADY DECLARED -->
+    <!-- invalid password  ALREADY DECLARED -->
+    <string name="request_sended">"Your SingUp request is already sent for checking"</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <!-- Strings related to user menu -->
+    <string name="menu_user_title">Menu</string>
 
 </resources>
 

@@ -21,7 +21,7 @@ public class LoggedInUser {
     public LoggedInUser(int userId, int password) {
         this.userId = userId;
         this.password = password;
-        search_psid(userId);
+        this.us = search_psid();
     }
 
     public int getUserId() {
@@ -32,15 +32,17 @@ public class LoggedInUser {
         return password;
     }
 
-    private void search_psid(int psid){
+    public user getUs() {
+        return us;
+    }
 
+    private user search_psid(){
         SQLiteDatabase db = con.getWritableDatabase();
-        row = db.rawQuery("Select * from Usuario where cedula='"+psid,null);
-
+        row = db.rawQuery("Select * from Usuario where cedula='"+getUserId(),null);
         if(row.moveToFirst()==true){
-            us.setCedula(row.getInt(0));
-            us.setNombre(row.getString(1));
-            us.setPassword(row.getInt(2));
+            user u = new user(row.getInt(0),row.getString(1),row.getInt(2));
+            return u;
         }
+        return null;
     }
 }
