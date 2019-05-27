@@ -3,6 +3,8 @@ package com.unemployed.bankapp.logic.users;
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
@@ -18,16 +20,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.unemployed.bankapp.R;
+import com.unemployed.bankapp.data.ConexionSQLiteHelper;
 import com.unemployed.bankapp.logic.users.LoggedInUserView;
 import com.unemployed.bankapp.logic.users.LoginFormState;
 import com.unemployed.bankapp.logic.users.LoginResult;
 import com.unemployed.bankapp.logic.users.LoginViewModel;
 import com.unemployed.bankapp.logic.users.LoginViewModelFactory;
 
+import java.io.IOException;
+
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    private ConexionSQLiteHelper mDBHelper;
+    private SQLiteDatabase mDb;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -116,10 +124,24 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         });
+
+        mDBHelper = new ConexionSQLiteHelper(this);
+
+        try {
+            mDBHelper.updateDataBase();
+        } catch (IOException mIOException) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            mDb = mDBHelper.getWritableDatabase();
+        } catch (SQLException mSQLException) {
+            throw mSQLException;
+        }
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = "Welcome! " + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
