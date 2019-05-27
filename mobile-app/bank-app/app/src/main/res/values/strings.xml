@@ -14,6 +14,8 @@
         <string name="invalid_password">Password must be 6 digits long</string>
         <string name="login_failed">"LogIn failed"</string>
         <string name="change_password">Change Password</string>
+        <string name="incorrect_password">"Incorrect Password"</string>
+        <string name="incorrect_psid">"Incorrect Personal ID"</string>
 
     <!-- Strings related to signup -->
     <string name="action_sign_up">SignUp</string>
@@ -23,3 +25,4 @@
         <string name="request_sended">"Your SingUp request is already sent for checking"</string>
 
 </resources>
+

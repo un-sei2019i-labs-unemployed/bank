@@ -13,7 +13,7 @@
     tools:context=".logic.users.LoginActivity">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/personal_id"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:layout_marginStart="24dp"
@@ -47,7 +47,7 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/personal_id" />
 
     <Button
         android:id="@+id/login"

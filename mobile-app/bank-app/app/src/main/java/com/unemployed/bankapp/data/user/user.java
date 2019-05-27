@@ -1,9 +1,13 @@
 package com.unemployed.bankapp.data.user;
 
+
+
 public class user {
     private int cedula;
     private String nombre;
     private int password;
+
+
 
     public user(int cedula, String nombre, int password) {
         this.cedula = cedula;
@@ -34,4 +38,6 @@ public class user {
     public void setPassword(int password) {
         this.password = password;
     }
+
+
 }
