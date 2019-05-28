@@ -13,9 +13,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
-
-
-    private static String DB_NAME = "blank-app.db";
+    private static String DB_NAME = "bank-app.db";
     private static String DB_PATH = "";
     private static final int DB_VERSION = 1;
 
@@ -29,17 +27,6 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
             mDataBase.close();
         super.close();
     }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion > oldVersion) mNeedUpdate = true;
-    }
-
     public ConexionSQLiteHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);
         if(Build.VERSION.SDK_INT >= 17){
@@ -97,5 +84,15 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     public boolean openDataBase() throws SQLException {
         mDataBase = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
         return mDataBase != null;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (newVersion > oldVersion) mNeedUpdate = true;
     }
 }

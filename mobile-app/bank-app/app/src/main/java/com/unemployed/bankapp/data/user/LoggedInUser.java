@@ -37,6 +37,7 @@ public class LoggedInUser {
     }
 
     private user search_psid(){
+        con.openDataBase();
         SQLiteDatabase db = con.getWritableDatabase();
         row = db.rawQuery("Select * from Usuario where cedula='"+getUserId(),null);
         if(row.moveToFirst()==true){

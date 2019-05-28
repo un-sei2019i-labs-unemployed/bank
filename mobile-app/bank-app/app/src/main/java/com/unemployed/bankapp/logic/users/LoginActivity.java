@@ -39,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
     private SQLiteDatabase mDb;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
@@ -103,19 +106,6 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
-                }
-                return false;
-            }
-        });
 
         mDBHelper = new ConexionSQLiteHelper(this);
 
@@ -131,13 +121,33 @@ public class LoginActivity extends AppCompatActivity {
             throw mSQLException;
         }
 
+        usernameEditText.addTextChangedListener(afterTextChangedListener);
+        passwordEditText.addTextChangedListener(afterTextChangedListener);
+        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+                    loginViewModel.login(usernameEditText.getText().toString(),
+                            passwordEditText.getText().toString());
+                }
+                return false;
+            }
+        });
+
+
+
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                sendMessagge(v);
+
             }
         });
 
@@ -153,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
-    public void sendMessagge(View vita){
+    public void sendMessagge(View vista){
         Intent menu = new Intent(this, MenuActivity.class);
         startActivity(menu);
     }
