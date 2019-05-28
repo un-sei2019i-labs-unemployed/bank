@@ -3,6 +3,7 @@ package com.unemployed.bankapp.logic.users;
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -116,15 +117,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        });
-
         mDBHelper = new ConexionSQLiteHelper(this);
 
         try {
@@ -139,6 +131,18 @@ public class LoginActivity extends AppCompatActivity {
             throw mSQLException;
         }
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadingProgressBar.setVisibility(View.VISIBLE);
+                loginViewModel.login(usernameEditText.getText().toString(),
+                        passwordEditText.getText().toString());
+
+                sendMessagge(v);
+            }
+        });
+
+
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -149,5 +153,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+    public void sendMessagge(View vita){
+        Intent menu = new Intent(this, MenuActivity.class);
+        startActivity(menu);
     }
 }
