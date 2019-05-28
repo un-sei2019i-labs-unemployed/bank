@@ -1,0 +1,176 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\71476aedd33bae7c283de3a80b87c0ca\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\40bfe4e43873b433283f57d337164bbc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60644fa6e8332bc3bc85e4485e8e3fee\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\b125256868a6673236c031ea34b5b2c8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9f4a796d3d7bc102ec8b62f8b708e613\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\f8d25cfb5ebef8fb0bfe857203cf9dbf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\2fadf0adc608862d9f9c4757788c017f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\d7a99ef53d2508703c65721eb3677b82\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\16ada68f7629649ca650b3c9ad472663\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\beb3b8ca486fdd660df743350358b170\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\855d33df4bd55cf3bb94ba7de92f0a1a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\52204eb9f8ab054c395e3c880c1a8c4d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7890a8130942fd30efe956e2301a68ab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7a0a9770f2b9695f2d86fd2b4bb06057\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\c483de6f835e4596b3657ef1107d5a85\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\5e4df8c7e210d51d0a73e16db6a3c24b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7579e500d24c24a63e50b93198647d60\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\56406c05a6acd78265dd38787aa42158\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7ad6d83db86efa309a06808892068fef\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3eca7149906f7634f7f602e96baab8c4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9b5a2292304fffc38fe15c5fb60e56e3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9679931753f73992902df686ca47b56b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60613ada5b471688cac87696d9d55cca\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\a7d46944da250c09f8bf93985191a1b2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\e3e4ed220be7b5708ccae09aca7dfd00\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\fa6eb96074d05868fa44b65e1bbacc32\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\10c56b84bb60b61ef49fed0d25e5823d\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7996d396c465377954b5dd1397ca9f1a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\81294e15313e55583eaae3cb6de7b72f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3fc7763c9c726f809b5f4329d35995d7\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:5:5-23:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\71476aedd33bae7c283de3a80b87c0ca\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\71476aedd33bae7c283de3a80b87c0ca\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60644fa6e8332bc3bc85e4485e8e3fee\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60644fa6e8332bc3bc85e4485e8e3fee\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7ad6d83db86efa309a06808892068fef\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7ad6d83db86efa309a06808892068fef\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.bank_app.ui.MenuActivity
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:12:9-62
+	android:name
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:12:19-50
+activity#com.example.bank_app.ui.LoginActivity
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:13:9-22:20
+	android:label
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:15:13-45
+	android:theme
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:16:13-56
+	android:name
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:14:13-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml:20:27-74
+uses-sdk
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\71476aedd33bae7c283de3a80b87c0ca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\71476aedd33bae7c283de3a80b87c0ca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\40bfe4e43873b433283f57d337164bbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\40bfe4e43873b433283f57d337164bbc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60644fa6e8332bc3bc85e4485e8e3fee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60644fa6e8332bc3bc85e4485e8e3fee\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\b125256868a6673236c031ea34b5b2c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\b125256868a6673236c031ea34b5b2c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9f4a796d3d7bc102ec8b62f8b708e613\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9f4a796d3d7bc102ec8b62f8b708e613\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\f8d25cfb5ebef8fb0bfe857203cf9dbf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\f8d25cfb5ebef8fb0bfe857203cf9dbf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\2fadf0adc608862d9f9c4757788c017f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\2fadf0adc608862d9f9c4757788c017f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\d7a99ef53d2508703c65721eb3677b82\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\d7a99ef53d2508703c65721eb3677b82\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\16ada68f7629649ca650b3c9ad472663\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\16ada68f7629649ca650b3c9ad472663\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\beb3b8ca486fdd660df743350358b170\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\beb3b8ca486fdd660df743350358b170\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\855d33df4bd55cf3bb94ba7de92f0a1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\855d33df4bd55cf3bb94ba7de92f0a1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\52204eb9f8ab054c395e3c880c1a8c4d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\52204eb9f8ab054c395e3c880c1a8c4d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7890a8130942fd30efe956e2301a68ab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7890a8130942fd30efe956e2301a68ab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7a0a9770f2b9695f2d86fd2b4bb06057\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7a0a9770f2b9695f2d86fd2b4bb06057\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\c483de6f835e4596b3657ef1107d5a85\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\c483de6f835e4596b3657ef1107d5a85\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\5e4df8c7e210d51d0a73e16db6a3c24b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\5e4df8c7e210d51d0a73e16db6a3c24b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7579e500d24c24a63e50b93198647d60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7579e500d24c24a63e50b93198647d60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\56406c05a6acd78265dd38787aa42158\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\56406c05a6acd78265dd38787aa42158\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\ebb245b192327e0081aa768ad6f27cae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7ad6d83db86efa309a06808892068fef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7ad6d83db86efa309a06808892068fef\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3eca7149906f7634f7f602e96baab8c4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3eca7149906f7634f7f602e96baab8c4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9b5a2292304fffc38fe15c5fb60e56e3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9b5a2292304fffc38fe15c5fb60e56e3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9679931753f73992902df686ca47b56b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\9679931753f73992902df686ca47b56b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60613ada5b471688cac87696d9d55cca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\60613ada5b471688cac87696d9d55cca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\a7d46944da250c09f8bf93985191a1b2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\a7d46944da250c09f8bf93985191a1b2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\e3e4ed220be7b5708ccae09aca7dfd00\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\e3e4ed220be7b5708ccae09aca7dfd00\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\fa6eb96074d05868fa44b65e1bbacc32\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\fa6eb96074d05868fa44b65e1bbacc32\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\10c56b84bb60b61ef49fed0d25e5823d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\10c56b84bb60b61ef49fed0d25e5823d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7996d396c465377954b5dd1397ca9f1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\7996d396c465377954b5dd1397ca9f1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\81294e15313e55583eaae3cb6de7b72f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\81294e15313e55583eaae3cb6de7b72f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3fc7763c9c726f809b5f4329d35995d7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\darui\.gradle\caches\transforms-2\files-2.1\3fc7763c9c726f809b5f4329d35995d7\AndroidManifest.xml:20:5-44
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Documents\Project\bankapp\app\src\main\AndroidManifest.xml
