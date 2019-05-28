@@ -44,7 +44,6 @@ public class LoginViewModel extends ViewModel {
                 if(data.getUs().getPassword() == data.getPassword()){
                     loginResult.setValue(new LoginResult(new LoggedInUserView(data.getUs().getNombre(),String.valueOf(data.getUserId()))));
 
-
                 }else{
                     loginResult.setValue(new LoginResult(R.string.incorrect_password));
                 }
