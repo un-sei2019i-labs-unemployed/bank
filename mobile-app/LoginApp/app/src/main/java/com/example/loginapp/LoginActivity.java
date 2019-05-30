@@ -15,11 +15,11 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity {
 
     //Declaration EditTexts
-    EditText editTextEmail;
+    EditText editTextUser;
     EditText editTextPassword;
 
     //Declaration TextInputLayout
-    TextInputLayout textInputLayoutEmail;
+    TextInputLayout textInputLayoutUser;
     TextInputLayout textInputLayoutPassword;
 
     //Declaration Button
@@ -45,20 +45,20 @@ public class LoginActivity extends AppCompatActivity {
                 if (validate()) {
 
                     //Get values from EditText fields
-                    String Email = editTextEmail.getText().toString();
+                    String userName = editTextUser.getText().toString();
                     int Password = Integer.parseInt(editTextPassword.getText().toString());
 
                     //Authenticate user
-                    User currentUser = sqliteHelper.Authenticate(new User(0, null, Email, Password));
+                    User currentUser = sqliteHelper.Authenticate(new User(0, userName, /*Email,*/ Password));
 
                     //Check Authentication is successful or not
                     if (currentUser != null) {
                         Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
 
                         //User Logged in Successfully Launch You home screen activity
-                       /* Intent intent=new Intent(LoginActivity.this,HomeScreenActivity.class);
+                       Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
-                        finish();*/
+                        //finish();
                     } else {
 
                         //User Logged in Failed
@@ -88,9 +88,9 @@ public class LoginActivity extends AppCompatActivity {
 
     //this method is used to connect XML views to its Objects
     private void initViews() {
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextUser = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutUser = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
 
@@ -110,36 +110,49 @@ public class LoginActivity extends AppCompatActivity {
 
     //This method is used to validate input given by user
     public boolean validate() {
-        boolean valid = false;
+        boolean valid = false,validE = false;
 
         //Get values from EditText fields
-        String Email = editTextEmail.getText().toString();
+        String userName = editTextUser.getText().toString();
         String Password = editTextPassword.getText().toString();
 
         //Handling validation for Email field
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
-            valid = false;
-            textInputLayoutEmail.setError("Please enter valid email!");
+        if (userName.isEmpty()) {
+            validE = false;
+            textInputLayoutUser.setError("Please enter valid user name!");
         } else {
-            valid = true;
-            textInputLayoutEmail.setError(null);
+            validE = true;
+            textInputLayoutUser.setError(null);
         }
 
         //Handling validation for Password field
         if (Password.isEmpty()) {
             valid = false;
-            textInputLayoutPassword.setError("Please enter valid password!");
+            textInputLayoutPassword.setError("¡ingrese una contraseña válida!");
         } else {
-            if (Password.length() > 5) {
+            if (Password.length() == 6 && isNumber(Password)) {
                 valid = true;
                 textInputLayoutPassword.setError(null);
-            } else {
+            } else if(!isNumber(Password)){
                 valid = false;
-                textInputLayoutPassword.setError("Password is to short!");
+                textInputLayoutPassword.setError("La contraseña debe ser numérica");
+            }else{
+                valid = false;
+                textInputLayoutPassword.setError("La contraseña debe tener exactamente 6 caracteres");
             }
         }
 
-        return valid;
+        return valid&&validE;
+    }
+
+    public static boolean isNumber(String key){
+        char[] keyChars=key.toCharArray();
+        for(char l:keyChars){
+            if(!(l=='0'||l=='1'||l=='2'||l=='3'||l=='4'||l=='5'||l=='6'||l=='7'||l=='8'||l=='9')){
+                return false;
+            }
+        }
+        return true;
     }
 
 

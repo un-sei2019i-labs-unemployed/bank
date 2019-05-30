@@ -5,6 +5,8 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="username">Username</string>
+    <string name="logout">Logout</string>
+    <string name="ID">cedula</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
 </resources>
