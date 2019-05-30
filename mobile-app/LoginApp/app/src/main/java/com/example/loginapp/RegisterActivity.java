@@ -11,17 +11,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.example.loginapp.LoginActivity.isNumber;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
     //Declaration EditTexts
     EditText editTextUserName;
-    EditText editTextEmail;
+    EditText editTextID;
     EditText editTextPassword;
 
     //Declaration TextInputLayout
     TextInputLayout textInputLayoutUserName;
-    TextInputLayout textInputLayoutEmail;
+    TextInputLayout textInputLayoutID;
     TextInputLayout textInputLayoutPassword;
 
     //Declaration Button
@@ -42,14 +44,14 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (validate()) {
                     String UserName = editTextUserName.getText().toString();
-                    String Email = editTextEmail.getText().toString();
+                    int id = Integer.parseInt(editTextID.getText().toString());
                     int Password = Integer.parseInt(editTextPassword.getText().toString());
 
                     //Check in the database is there any user associated with  this email
-                    if (!sqliteHelper.isEmailExists(Email)) {
+                    if (!sqliteHelper.isUserExists(UserName)) {
 
                         //Email does not exist now add new user to database
-                        sqliteHelper.addUser(new User(0, UserName, Email, Password));
+                        sqliteHelper.addUser(new User(0, UserName, /*Email,*/ Password));
                         Snackbar.make(buttonRegister, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
                         new Handler().postDelayed(new Runnable() {
                             @Override
@@ -60,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }else {
 
                         //Email exists with email input provided so show error user already exist
-                        Snackbar.make(buttonRegister, "User already exists with same email ", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(buttonRegister, "ya existe este usuario registrado ", Snackbar.LENGTH_LONG).show();
                     }
 
 
@@ -82,10 +84,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     //this method is used to connect XML views to its Objects
     private void initViews() {
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextID = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         editTextUserName = (EditText) findViewById(R.id.editTextUserName);
-        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutID = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
         textInputLayoutUserName = (TextInputLayout) findViewById(R.id.textInputLayoutUserName);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
@@ -94,51 +96,62 @@ public class RegisterActivity extends AppCompatActivity {
 
     //This method is used to validate input given by user
     public boolean validate() {
-        boolean valid = false;
+        boolean validU = false, valid=false, validP=false;
 
         //Get values from EditText fields
         String UserName = editTextUserName.getText().toString();
-        String Email = editTextEmail.getText().toString();
+        String ID = editTextID.getText().toString();
         String Password = editTextPassword.getText().toString();
 
         //Handling validation for UserName field
         if (UserName.isEmpty()) {
-            valid = false;
+            validU = false;
             textInputLayoutUserName.setError("Please enter valid username!");
         } else {
-            if (UserName.length() > 5) {
-                valid = true;
+            if (UserName.length() >= 3) {
+                validU = true;
                 textInputLayoutUserName.setError(null);
             } else {
-                valid = false;
+                validU = false;
                 textInputLayoutUserName.setError("Username is to short!");
             }
         }
 
-        //Handling validation for Email field
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
-            valid = false;
-            textInputLayoutEmail.setError("Please enter valid email!");
+        //Handling validation for ID field
+        if (ID.isEmpty()) {
+            validP = false;
+            textInputLayoutID.setError("introduzca una identificación válida");
         } else {
-            valid = true;
-            textInputLayoutEmail.setError(null);
+            if(ID.length()>=8&&isNumber(ID)){
+                validP = true;
+                textInputLayoutID.setError(null);
+            }else if(!isNumber(ID)){
+                validP = false;
+                textInputLayoutPassword.setError("La identificación debe ser numérica");
+            }else{
+                validP = false;
+                textInputLayoutPassword.setError("La identificación debe tener más de 8 caracteres");
+            }
         }
 
         //Handling validation for Password field
         if (Password.isEmpty()) {
             valid = false;
-            textInputLayoutPassword.setError("Please enter valid password!");
+            textInputLayoutPassword.setError("¡ingrese una contraseña válida!");
         } else {
-            if (Password.length() > 5) {
+            if (Password.length() == 6 && isNumber(Password)) {
                 valid = true;
                 textInputLayoutPassword.setError(null);
-            } else {
+            } else if(!isNumber(Password)){
                 valid = false;
-                textInputLayoutPassword.setError("Password is to short!");
+                textInputLayoutPassword.setError("La contraseña debe ser numérica");
+            }else{
+                valid = false;
+                textInputLayoutPassword.setError("La contraseña debe tener exactamente 6 caracteres");
             }
         }
 
 
-        return valid;
+        return validU&&valid&&validP;
     }
 }

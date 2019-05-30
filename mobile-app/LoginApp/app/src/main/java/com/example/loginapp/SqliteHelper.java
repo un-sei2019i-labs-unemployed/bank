@@ -25,7 +25,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public static final String KEY_USER_NAME = "username";
 
     //COLUMN email
-    public static final String KEY_EMAIL = "email";
+    //public static final String KEY_EMAIL = "email";
 
     //COLUMN password
     public static final String KEY_PASSWORD = "password";
@@ -35,7 +35,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
             + " ( "
             + KEY_ID + " INTEGER PRIMARY KEY, "
             + KEY_USER_NAME + " TEXT, "
-            + KEY_EMAIL + " TEXT, "
+            //+ KEY_EMAIL + " TEXT, "
             + KEY_PASSWORD + " TEXT"
             + " ) ";
 
@@ -67,13 +67,13 @@ public class SqliteHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         //Put username in  @values
-        values.put(KEY_USER_NAME, user.userName);
+        values.put(KEY_USER_NAME, user.getUserName());
 
         //Put email in  @values
-        values.put(KEY_EMAIL, user.email);
+        //values.put(KEY_EMAIL, user.getEmail());
 
         //Put password in  @values
-        values.put(KEY_PASSWORD, user.password);
+        values.put(KEY_PASSWORD, user.getPassword());
 
         // insert row
         long todo_id = db.insert(TABLE_USERS, null, values);
@@ -82,17 +82,17 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public User Authenticate(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USERS,// Selecting Table
-                new String[]{KEY_ID, KEY_USER_NAME, KEY_EMAIL, KEY_PASSWORD},//Selecting columns want to query
-                KEY_EMAIL + "=?",
-                new String[]{user.email},//Where clause
+                new String[]{KEY_ID, KEY_USER_NAME, /*KEY_EMAIL,*/ KEY_PASSWORD},//Selecting columns want to query
+                KEY_USER_NAME + "=?",
+                new String[]{user.getUserName()},//Where clause
                 null, null, null);
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
             //if cursor has value then in user database there is user associated with this given email
-            User user1 = new User(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3));
+            User user1 = new User(cursor.getInt(cursor.getColumnIndex(KEY_ID)), cursor.getString(cursor.getColumnIndex(KEY_USER_NAME))/*, cursor.getString(2)*/, cursor.getInt(cursor.getColumnIndex(KEY_PASSWORD)));
 
             //Match both passwords check they are same or not
-            if (user.password==user1.password) {
+            if (user.getPassword()==user1.getPassword()) {
                 return user1;
             }
         }
@@ -101,12 +101,12 @@ public class SqliteHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public boolean isEmailExists(String email) {
+    public boolean isUserExists(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USERS,// Selecting Table
-                new String[]{KEY_ID, KEY_USER_NAME, KEY_EMAIL, KEY_PASSWORD},//Selecting columns want to query
-                KEY_EMAIL + "=?",
-                new String[]{email},//Where clause
+                new String[]{KEY_ID, KEY_USER_NAME, /*KEY_EMAIL,*/ KEY_PASSWORD},//Selecting columns want to query
+                KEY_USER_NAME + "=?",
+                new String[]{name},//Where clause
                 null, null, null);
 
         if (cursor != null && cursor.moveToFirst()&& cursor.getCount()>0) {
