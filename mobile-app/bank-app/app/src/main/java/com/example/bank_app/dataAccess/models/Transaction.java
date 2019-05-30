@@ -1,4 +1,4 @@
-package com.example.bank_app.data.model;
+package com.example.bank_app.dataAccess.models;
 
 import java.util.Date;
 
@@ -9,13 +9,29 @@ public class Transaction {
     private int begin;
     private int destination;
     private int amount;
+    private String state;
 
-    public Transaction(int id_transaction, Date date, int begin, int destination, int amount) {
+    public Transaction(int id_transaction, Date date, int begin, int destination, int amount, String state) {
         this.id_transaction = id_transaction;
         this.date = date;
         this.begin = begin;
         this.destination = destination;
         this.amount = amount;
+    }
+
+    public Transaction(Date date, int begin, int destination, int amount, String state) {
+        this.date = date;
+        this.begin = begin;
+        this.destination = destination;
+        this.amount = amount;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public int getId_transaction() {

@@ -1,18 +1,17 @@
-package com.example.bank_app.data;
+package com.example.bank_app.dataAccess.databases;
 
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class ConexionSQLiteHelper extends SQLiteOpenHelper {
+public class Database extends SQLiteOpenHelper {
 
     // /data/data/com.example.bank_app/databases/
     private static String DB_PATH = "";
@@ -21,7 +20,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
-    public ConexionSQLiteHelper(Context context) {
+    public Database(Context context) {
         super(context, DB_NAME, null, 1);
         this.myContext = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";

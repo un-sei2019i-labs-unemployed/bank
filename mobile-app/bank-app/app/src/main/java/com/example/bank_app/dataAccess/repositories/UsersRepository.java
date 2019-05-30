@@ -1,4 +1,4 @@
-package com.example.bank_app.data.repositories;
+package com.example.bank_app.dataAccess.repositories;
 
 import android.content.Context;
 
@@ -8,22 +8,22 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
-import com.example.bank_app.data.ConexionSQLiteHelper;
-import com.example.bank_app.data.model.User;
+import com.example.bank_app.dataAccess.databases.Database;
+import com.example.bank_app.dataAccess.models.User;
 
 import java.io.IOException;
 
 
-public class Users {
+public class UsersRepository {
 
     protected static final String TAG = "UsersAdapter";
 
     private User user;
     private SQLiteDatabase mDb;
-    private ConexionSQLiteHelper con;
+    private Database con;
 
-    public Users(Context context) {
-        this.con = new ConexionSQLiteHelper(context);
+    public UsersRepository(Context context) {
+        this.con = new Database(context);
     }
 
     public User getUser() {
@@ -34,7 +34,7 @@ public class Users {
         this.user = user;
     }
 
-    public Users createTable() throws SQLException{
+    public UsersRepository createTable() throws SQLException{
         try
         {
             con.createDataBase();
@@ -46,7 +46,7 @@ public class Users {
         return this;
     }
 
-    public Users open()throws  SQLException{
+    public UsersRepository open()throws  SQLException{
         try
         {
             con.openDataBase();
@@ -66,9 +66,10 @@ public class Users {
         con.close();
     }
 
-    public boolean insertUser(){
+    public boolean insertUser(int id, String name, int pass){
         try{
             // SQL Statement
+            String insert = "insert into Usuario values("+id+","+name+","+pass+")";
             return true;
         }catch(SQLiteException e){
             return false;

@@ -2,15 +2,15 @@ package com.example.bank_app.logic;
 
 import android.content.Context;
 
-import com.example.bank_app.data.model.User;
-import com.example.bank_app.data.repositories.Users;
+import com.example.bank_app.dataAccess.models.User;
+import com.example.bank_app.dataAccess.repositories.UsersRepository;
 
 public class Login {
 
-    private Users provUser;
+    private UsersRepository provUser;
 
     public Login(Context context) {
-        this.provUser = new Users(context);
+        this.provUser = new UsersRepository(context);
     }
 
     private User login(int personal_id){

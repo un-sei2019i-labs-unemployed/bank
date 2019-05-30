@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-        _loginButton.setEnabled(false);
 
         _singUp.setOnClickListener(
                 new View.OnClickListener() {
@@ -73,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void menuUser(){
-        Intent userMenu = new Intent (getApplicationContext(), CreateAccountActivity.class);
+        Intent userMenu = new Intent (getApplicationContext(), UserMenuActivity.class);
         startActivity(userMenu);
     }
 

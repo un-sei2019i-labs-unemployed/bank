@@ -1,4 +1,4 @@
-package com.example.bank_app.data.model;
+package com.example.bank_app.dataAccess.models;
 
 public class Admin {
 
@@ -7,6 +7,10 @@ public class Admin {
 
     public Admin(String nombre, int password) {
         this.nombre = nombre;
+        this.password = password;
+    }
+
+    public Admin(int password) {
         this.password = password;
     }
 

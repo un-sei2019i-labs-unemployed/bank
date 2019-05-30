@@ -1,4 +1,4 @@
-package com.example.bank_app.data.model;
+package com.example.bank_app.dataAccess.models;
 
 public class User {
 
@@ -8,6 +8,11 @@ public class User {
 
     public User(int personal_id, String name, int password) {
         this.personal_id = personal_id;
+        this.name = name;
+        this.password = password;
+    }
+
+    public User(String name, int password) {
         this.name = name;
         this.password = password;
     }
