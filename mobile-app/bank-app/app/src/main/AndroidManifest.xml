@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.UserMenuActivity"
-            android:label="@string/title_activity_create_account"></activity>
+            android:label="@string/title_activity_create_account">
+        </activity>
+
         <activity
             android:name=".ui.CreateAccountActivity"
             android:label="@string/title_activity_user_menu"
@@ -21,6 +23,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bank_app.ui.LoginActivity" />
         </activity>
+
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/colorBackground"
     android:fitsSystemWindows="true">
 
     <LinearLayout
+        android:id="@+id/login_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -13,11 +15,26 @@
         android:layout_marginRight="16dp"
         android:orientation="vertical">
 
-        <ImageView android:src="@drawable/logo"
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="72dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal" />
+            android:contentDescription="@string/description_bank_image"
+            android:src="@drawable/image_bank" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/message_welcome"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayoutUsername"
@@ -27,11 +44,12 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/input_personalID"
+                android:id="@+id/login_input_personalID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/text_personalID"
-                android:inputType="number" />
+                android:hint="@string/field_personalID"
+                android:inputType="number"
+                android:textColorLink="@color/colorAccent" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -44,12 +62,13 @@
             app:passwordToggleTint="@color/colorBlue">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/input_password"
+                android:id="@+id/login_input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/text_password"
+                android:hint="@string/field_password"
                 android:inputType="numberPassword"
-                android:maxLength="6" />
+                android:maxLength="6"
+                android:textColorLink="@color/colorAccent" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -58,18 +77,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:background="@color/colorBlue"
-            android:text="@string/text_login"
+            android:background="@color/colorAccent"
+            android:text="@string/action_login"
             android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/textViewCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
-            android:textColor="@color/colorBlue"
-            android:text="@string/text_create_new_account"/>
+            android:text="@string/action_create_account"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp" />
+
     </LinearLayout>
 </ScrollView>

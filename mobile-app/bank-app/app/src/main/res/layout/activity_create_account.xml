@@ -21,76 +21,104 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_create_account" />
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_create_account"
+        android:background="@color/colorBackground"
+        app:layout_anchor="@+id/singin_linearLayout"
+        app:layout_anchorGravity="end|top" />
+
+    <LinearLayout
+        android:id="@+id/singin_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
         <TextView
-            android:id="@+id/loginscrn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
-            android:text="Registration"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/action_signup"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/fstTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="20dp"
-            android:text="Full Name"/>
+            android:text="@string/field_full_name" />
+
         <EditText
             android:id="@+id/txtName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:ems="10"/>
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorAccent"
+            android:importantForAutofill="no" />
+
         <TextView
             android:id="@+id/secTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Personal ID"
-            android:layout_marginLeft="100dp" />
+            android:layout_marginLeft="16dp"
+            android:text="@string/field_personalID" />
+
         <EditText
             android:id="@+id/txtPersonal_id"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_gravity="clip_horizontal"
             android:ems="10"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:textColorLink="@color/colorAccent"
+            android:importantForAutofill="no" />
+
         <TextView
             android:id="@+id/thirdTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
-            android:layout_marginLeft="100dp" />
+            android:layout_marginLeft="16dp"
+            android:text="@string/field_password" />
+
         <EditText
             android:id="@+id/txtPwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:inputType="numberPassword"
-            android:ems="10" />
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="SEND"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorBlue"/>
-
-        <TextView android:id="@+id/lnkLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Already Registered? Login here"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorAccent"
+            android:text="@string/action_create_account"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/lnkLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="@color/colorBlue"
-            />
+            android:text="@string/action_login"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
