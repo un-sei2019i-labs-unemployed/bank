@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".ui.CreateAccountActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -17,16 +18,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="SignUP" />
+            app:title="@string/action_signup" />
 
     </android.support.design.widget.AppBarLayout>
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_create_account"
-        android:background="@color/colorBackground"
-        app:layout_anchor="@+id/singin_linearLayout"
-        app:layout_anchorGravity="end|top" />
 
     <LinearLayout
         android:id="@+id/singin_linearLayout"
@@ -35,6 +29,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:background="@color/colorBackground"
         android:orientation="vertical">
 
         <TextView
@@ -62,9 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:textColorLink="@color/colorAccent"
-            android:importantForAutofill="no" />
+            android:textColorLink="@color/colorAccent" />
 
         <TextView
             android:id="@+id/secTxt"
@@ -79,9 +74,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="clip_horizontal"
             android:ems="10"
+            android:importantForAutofill="no"
             android:inputType="number"
-            android:textColorLink="@color/colorAccent"
-            android:importantForAutofill="no" />
+            android:textColorLink="@color/colorAccent" />
 
         <TextView
             android:id="@+id/thirdTxt"
@@ -96,21 +91,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:ems="10"
-            android:inputType="numberPassword"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="numberPassword" />
 
         <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
+            android:id="@+id/buttonCreateAccount"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/transparent_bg_bordered_button"
             android:text="@string/action_create_account"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorAccent" />
 
         <TextView
-            android:id="@+id/lnkLogin"
+            android:id="@+id/backToLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -118,7 +113,7 @@
             android:gravity="center"
             android:text="@string/action_login"
             android:textColor="@color/colorAccent"
-            android:textSize="10sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
