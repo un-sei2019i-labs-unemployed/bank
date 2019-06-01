@@ -32,20 +32,16 @@ public class Login {
                 // Handle
                 if (provUser != null){
                     if(provUser.getPassword() == pass){
-                        return "Connection successful";
+                        return "Connection Successful";
                     }
-                    return "Incorrect password";
+                    return "Incorrect Password";
                 }
-                return "User doesn't exist";
+                return "User Doesn't Exist";
             }else{
-                return "Password must have 6 numbers";
+                return "Password Must Have 6 Numbers";
             }
         }else{
             return "Enter Personal ID";
         }
-
-
-
-
     }
 }

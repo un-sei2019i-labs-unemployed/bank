@@ -35,13 +35,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ocultarTecladoVirtual();
+        OcultarTecladoVirtual();
 
         _personal_id = findViewById(R.id.login_input_personalID);
         _password = findViewById(R.id.login_input_password);
-        _loginButton = findViewById(R.id.buttonLogin);
-        _singUp = findViewById(R.id.textViewCreateAccount);
-
+        _loginButton = findViewById(R.id.login_button_login);
+        _singUp = findViewById(R.id.login_text_createAccount);
 
         message = new Message();
 
@@ -51,10 +50,9 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(View view)
                     {
                         dialog = message.waiting("Authenticating",LoginActivity.this);
-                        login(_personal_id.getText().toString(),_password.getText().toString());
+                        LocalLogin(_personal_id.getText().toString(),_password.getText().toString());
                     }
                 });
-
 
         _singUp.setOnClickListener(
                 new View.OnClickListener() {
@@ -64,15 +62,17 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void login(String personal_id, String password){
+    private void LocalLogin(String personal_id, String password){
         login = new Login(this);
+
         String msg = login.isAuthenticated(personal_id, password);
         dialog.dismiss();
-        if(msg.equalsIgnoreCase("Connection successful")){
+
+        if(msg.equalsIgnoreCase("Connection Successful")){
             menuUser();
         }else if(msg.equalsIgnoreCase("Enter Personal ID")){
             _personal_id.setError(msg);
-        }else if(msg.equalsIgnoreCase("Password must have 6 numbers")){
+        }else if(msg.equalsIgnoreCase("Password Must Have 6 Numbers")){
             _password.setError(msg);
         }else{
             message.alert(msg,this);
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent createAccount = new Intent (getApplicationContext(), CreateAccountActivity.class);
         startActivity(createAccount);
     }
-    private void ocultarTecladoVirtual(){
+    private void OcultarTecladoVirtual(){
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
