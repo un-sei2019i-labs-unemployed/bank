@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,16 +19,23 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText _personal_id;
     EditText _password;
+
     Button _loginButton;
+
     TextView _singUp;
+
     Login login;
+
     Message message;
+
     ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ocultarTecladoVirtual();
 
         _personal_id = findViewById(R.id.login_input_personalID);
         _password = findViewById(R.id.login_input_password);
@@ -79,5 +87,10 @@ public class LoginActivity extends AppCompatActivity {
     private void createAccount(){
         Intent createAccount = new Intent (getApplicationContext(), CreateAccountActivity.class);
         startActivity(createAccount);
+    }
+    private void ocultarTecladoVirtual(){
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
+        );
     }
 }

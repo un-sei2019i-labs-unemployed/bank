@@ -14,7 +14,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@color/colorBackground"
+        android:background="@android:color/transparent"
         android:orientation="vertical">
 
         <ImageView
@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/field_personalID"
                 android:inputType="number"
+                android:textColor="@color/colorAccent"
                 android:textColorLink="@color/colorAccent" />
         </android.support.design.widget.TextInputLayout>
 
@@ -70,12 +71,12 @@
                 android:hint="@string/field_password"
                 android:inputType="numberPassword"
                 android:maxLength="6"
-                android:textColorLink="@color/colorAccent" />
+                android:textColor="@color/colorAccent" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/buttonLogin"
-            android:layout_width="match_parent"
+            android:layout_width="147dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
