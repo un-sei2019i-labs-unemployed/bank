@@ -1,8 +1,11 @@
 package com.example.bank_app.ui;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,19 +19,22 @@ import com.example.bank_app.logic.Signup;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    EditText _name;
-    EditText _personal_id;
-    EditText _password;
+    private EditText _name;
+    private EditText _personal_id;
+    private EditText _password;
 
-    Button _signupButton;
+    private TextInputLayout _password_inputLayout;
 
-    TextView _logIn;
+    private Button _signupButton;
 
-    Signup signup; //usado para verificar que no existe otro ususario con el  id a registrar.
+    private TextView _logIn;
 
-    Message message;
+    private Signup signup; //usado para verificar que no existe otro ususario con el  id a registrar.
 
-    ProgressDialog dialog;
+    private Message message;
+
+    private ProgressDialog dialog;
+
 
 
     @Override
@@ -41,6 +47,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         _name = findViewById(R.id.signup_input_fullname);
         _personal_id = findViewById(R.id.signup_input_personalID);
         _password = findViewById(R.id.signup_input_password);
+
+        _password_inputLayout = findViewById(R.id.login_textInputLayout_password);
 
         _signupButton = findViewById(R.id.signup_button_createAccount);
         _logIn = findViewById(R.id.signup_text_login);
@@ -80,18 +88,18 @@ public class CreateAccountActivity extends AppCompatActivity {
         dialog.dismiss();
 
         if(msg.equalsIgnoreCase("User & Account Created")){
-            //menuUser();
-            //show a panel that says "successful shit"
-            _personal_id.setError(msg);
+            successfulAccountCreation();
         }else if(msg.equalsIgnoreCase("User Id Is Already Registered")){
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Password must have 6 numbers")){
-            _password.setError(msg);
+            _password_inputLayout.setError(msg);
         }else if(msg.equalsIgnoreCase("Enter Personal ID")) {
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Enter Name")){
             _name.setError(msg);
         }else if (msg.equalsIgnoreCase("Can´t Create User")){
+            _personal_id.setError(msg);
+        }else if(msg.equalsIgnoreCase("Personal ID Must Have 8 Numbers At Least")){
             _personal_id.setError(msg);
         }else{
             message.alert(msg,this);
@@ -103,4 +111,20 @@ public class CreateAccountActivity extends AppCompatActivity {
         startActivity(log);
     }
 
+    private void successfulAccountCreation(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(CreateAccountActivity.this);
+
+        builder.setTitle("Successful Account Creation!");
+        builder.setMessage("Now you can use our services.");
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Back to Login",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which){
+                goToLogin();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }

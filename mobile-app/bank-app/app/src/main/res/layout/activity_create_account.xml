@@ -61,7 +61,7 @@
             android:textColorLink="@color/colorAccent" />
             -->
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayoutUserName"
+            android:id="@+id/signup_textInputLayout_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -96,7 +96,7 @@
             android:textColorLink="@color/colorAccent" />
             -->
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputPersonalID"
+            android:id="@+id/signup_textInputLayout_personalID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -131,7 +131,7 @@
             -->
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayoutPassword"
+            android:id="@+id/login_textInputLayout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

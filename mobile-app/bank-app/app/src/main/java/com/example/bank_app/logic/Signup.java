@@ -16,7 +16,7 @@ public class Signup {
 
     public String IsVerified(String fullname, String personal_id, String password) {
         if (!fullname.isEmpty()) {
-            if (!personal_id.isEmpty()) {
+            if (!personal_id.isEmpty() && personal_id.length()>=8) {
                 if (!password.isEmpty() && password.length() == 6) {
                     int id = Integer.parseInt(personal_id);
                     int pass = Integer.parseInt(password);
@@ -26,7 +26,7 @@ public class Signup {
                     if (localProvUser != null) {
                         return "User Id Is Already Registered";
                     } else {
-                        //hecer el registro en la base de datos;
+                        //hacer el registro en la base de datos;
                         if(provUser.insertUser(id,fullname,pass)){
                             return "User & Account Created";
                         }else{
@@ -37,8 +37,12 @@ public class Signup {
                 } else {
                     return "Password Must Have 6 Numbers";
                 }
-            } else {
+            } else if(personal_id.isEmpty()) {
                 return "Enter Personal ID";
+            }else if(personal_id.length()<8){
+                return "Personal ID Must Have 8 Numbers At Least";
+            }else{
+                return "Can´t Create User";
             }
         } else {
             return "Enter Name";

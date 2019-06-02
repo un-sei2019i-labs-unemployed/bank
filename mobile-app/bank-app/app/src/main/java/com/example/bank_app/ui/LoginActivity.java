@@ -3,6 +3,7 @@ package com.example.bank_app.ui;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,18 +18,22 @@ import com.example.bank_app.logic.Message;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText _personal_id;
-    EditText _password;
+    private EditText _personal_id;
+    private EditText _password;
 
-    Button _loginButton;
+    private TextInputLayout _password_inputLayout;
 
-    TextView _singUp;
+    private Button _loginButton;
 
-    Login login;
+    private TextView _singUp;
 
-    Message message;
+    private Login login;
 
-    ProgressDialog dialog;
+    private Message message;
+
+    private ProgressDialog dialog;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         _password = findViewById(R.id.login_input_password);
         _loginButton = findViewById(R.id.login_button_login);
         _singUp = findViewById(R.id.login_text_createAccount);
+
+        _password_inputLayout = findViewById(R.id.login_textInputLayout_password);
 
         message = new Message();
 
@@ -73,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         }else if(msg.equalsIgnoreCase("Enter Personal ID")){
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Password Must Have 6 Numbers")){
-            _password.setError(msg);
+            _password_inputLayout.setError(msg);
         }else{
             message.alert(msg,this);
         }
@@ -88,9 +95,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent createAccount = new Intent (getApplicationContext(), CreateAccountActivity.class);
         startActivity(createAccount);
     }
+
     private void OcultarTecladoVirtual(){
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
     }
+
 }
