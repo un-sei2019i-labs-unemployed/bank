@@ -21,13 +21,17 @@ public class Signup {
                     int id = Integer.parseInt(personal_id);
                     int pass = Integer.parseInt(password);
 
-                    User provUser = lookForUser(id);
+                    User localProvUser = lookForUser(id);
                     // Handle
-                    if (provUser != null) {
+                    if (localProvUser != null) {
                         return "User Id Is Already Registered";
                     } else {
                         //hecer el registro en la base de datos;
-                        return "User & Account Created";
+                        if(provUser.insertUser(id,fullname,pass)){
+                            return "User & Account Created";
+                        }else{
+                            return "Can´t Create User";
+                        }
                     }
 
                 } else {

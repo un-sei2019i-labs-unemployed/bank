@@ -1,6 +1,7 @@
 package com.example.bank_app.ui;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.bank_app.R;
-import com.example.bank_app.logic.Login;
 import com.example.bank_app.logic.Message;
 import com.example.bank_app.logic.Signup;
 
@@ -52,11 +52,16 @@ public class CreateAccountActivity extends AppCompatActivity {
                 {
                     public void onClick(View view)
                     {
-                        dialog = message.waiting("Authenticating",CreateAccountActivity.this);
+                        dialog = message.waiting("Creating",CreateAccountActivity.this);
                         CreateAccount(_name.getText().toString(),_personal_id.getText().toString(),_password.getText().toString());
                     }
                 });
-
+        _logIn.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View viewIn) {
+                        goToLogin();
+                    }
+                });
         //Toolbar toolbar = findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
     }
@@ -77,6 +82,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         if(msg.equalsIgnoreCase("User & Account Created")){
             //menuUser();
             //show a panel that says "successful shit"
+            _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("User Id Is Already Registered")){
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Password must have 6 numbers")){
@@ -85,9 +91,16 @@ public class CreateAccountActivity extends AppCompatActivity {
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Enter Name")){
             _name.setError(msg);
+        }else if (msg.equalsIgnoreCase("Can´t Create User")){
+            _personal_id.setError(msg);
         }else{
             message.alert(msg,this);
         }
+    }
+
+    private void goToLogin(){
+        Intent log = new Intent (getApplicationContext(), LoginActivity.class);
+        startActivity(log);
     }
 
 }

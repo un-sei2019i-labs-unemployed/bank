@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         _singUp.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View viewIn) {
-                        createAccount();
+                        goToCreateAccount();
                     }
                 });
     }
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         dialog.dismiss();
 
         if(msg.equalsIgnoreCase("Connection Successful")){
-            menuUser();
+            goToMenuUser();
         }else if(msg.equalsIgnoreCase("Enter Personal ID")){
             _personal_id.setError(msg);
         }else if(msg.equalsIgnoreCase("Password Must Have 6 Numbers")){
@@ -79,12 +79,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void menuUser(){
+    private void goToMenuUser(){
         Intent userMenu = new Intent (getApplicationContext(), UserMenuActivity.class);
         startActivity(userMenu);
     }
 
-    private void createAccount(){
+    private void goToCreateAccount(){
         Intent createAccount = new Intent (getApplicationContext(), CreateAccountActivity.class);
         startActivity(createAccount);
     }
