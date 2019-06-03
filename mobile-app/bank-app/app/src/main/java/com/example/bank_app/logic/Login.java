@@ -42,7 +42,7 @@ public class Login {
                 }
                 return "User Doesn't Exist";
             }else{
-                return "Password Must Have 6 Numbers";
+                return "Password must have 6 numbers";
             }
         }else{
             return "Enter Personal ID";

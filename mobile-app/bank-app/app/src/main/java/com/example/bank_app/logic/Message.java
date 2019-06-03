@@ -29,7 +29,6 @@ public class Message extends DialogFragment {
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage(msg);
-        progressDialog.setMax(180);
         progressDialog.show();
         return progressDialog;
     }

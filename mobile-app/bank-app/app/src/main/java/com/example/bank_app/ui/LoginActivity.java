@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             goToMenuUser();
         }else if(msg.equalsIgnoreCase("Enter Personal ID")){
             _personal_id.setError(msg);
-        }else if(msg.equalsIgnoreCase("Password Must Have 6 Numbers")){
+        }else if(msg.equalsIgnoreCase("Password must have 6 numbers")){
             _password_inputLayout.setError(msg);
         }else{
             message.alert(msg,this);
