@@ -95,6 +95,20 @@ public class AccountsRepository {
         return -1;
     }
 
+    public int getAccountOwnerById(int acountID){
+        try{
+            String select = "select propietario from Cuenta where _id ="+acountID;
+            Cursor query = mDb.rawQuery(select,null);
+            if(query.moveToFirst()){
+                int _id = query.getInt(0);
+                return _id;
+            }
+        }catch(SQLiteException e){
+            return -1;
+        }
+        return -1;
+    }
+
     public int getAccountNumber(){
         try{
             String select = "select * from NoCuentas";
@@ -112,6 +126,16 @@ public class AccountsRepository {
     public boolean updateAccount(int newID, int owner){
         try{
             String update = "UPDATE Cuenta set _id="+newID+" where propietario="+owner;
+            mDb.execSQL(update);
+            return true;
+        }catch(SQLiteException e){
+            return false;
+        }
+    }
+
+    public boolean recharge(int newBalance, int owner){
+        try{
+            String update = "UPDATE Cuenta set saldo="+newBalance+" where propietario="+owner;
             mDb.execSQL(update);
             return true;
         }catch(SQLiteException e){

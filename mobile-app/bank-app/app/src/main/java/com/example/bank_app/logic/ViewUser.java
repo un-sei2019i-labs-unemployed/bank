@@ -24,6 +24,16 @@ public class ViewUser {
         return null;
     }
 
+    public boolean refill(int owner){
+        provAccount.createTable();
+        provAccount.open();
+        if (provAccount.getAccountById(owner)){
+            return  provAccount.recharge(500,owner);
+        }
+        return false;
+    }
+
+
     public int accountExistance(int account_id){
         int currentID=provAccount.getAccountExistingId(account_id);
         provAccount.createTable();

@@ -249,5 +249,16 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/recharge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="16dp"
+        android:text="Hacks"
+        app:layout_constraintStart_toEndOf="@+id/title_panel"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

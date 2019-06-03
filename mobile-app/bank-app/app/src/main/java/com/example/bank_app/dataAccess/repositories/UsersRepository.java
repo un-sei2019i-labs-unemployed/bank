@@ -69,6 +69,7 @@ public class UsersRepository {
     public boolean insertUser(int id, String name, int pass){
         try{
             // SQL Statement
+            setUser(new User(id,name,pass));
             String insert = "insert into Usuario values("+id+",'"+name+"',"+pass+")";
             mDb.execSQL(insert);
             return true;
