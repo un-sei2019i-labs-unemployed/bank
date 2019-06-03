@@ -31,11 +31,15 @@
 
     <Button
         android:id="@+id/LogoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="68dp"
+        android:layout_height="26dp"
         android:layout_marginTop="16dp"
-        android:background="@color/colorAccent"
-        android:text="logout"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:text="@string/action_logout"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,8 +50,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="54dp"
-        android:text="cedula"
-        android:textSize="30sp"
+        android:text="@string/text_personalId"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/message"
         tools:visibility="visible" />
@@ -58,9 +63,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="54dp"
-        android:text="nombre: "
-        android:textSize="30sp"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textID" />
@@ -71,9 +77,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="54dp"
-        android:text="no_cuenta:"
-        android:textSize="30sp"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_accountId"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textName" />
@@ -84,11 +91,56 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="54dp"
-        android:text="balance: $"
-        android:textSize="30sp"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_balance"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAcount" />
+
+    <TextView
+        android:id="@+id/text_value_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/text_value"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textBalance"
+        app:layout_constraintStart_toEndOf="@+id/textBalance" />
+
+    <TextView
+        android:id="@+id/text_value_personalId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/text_value"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textID"
+        app:layout_constraintStart_toEndOf="@+id/textID" />
+
+    <TextView
+        android:id="@+id/text_value_accountId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/text_value"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textAcount"
+        app:layout_constraintStart_toEndOf="@+id/textAcount" />
+
+    <TextView
+        android:id="@+id/text_value_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/text_value"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textName"
+        app:layout_constraintStart_toEndOf="@+id/textName" />
 
 </android.support.constraint.ConstraintLayout>

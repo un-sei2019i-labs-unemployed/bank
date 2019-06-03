@@ -11,11 +11,19 @@
     <string name="field_personalID">Personal ID</string>
     <string name="field_password">Password</string>
 
+    <!--Strings related to TEXT-->
+    <string name="text_name">Nombre </string>
+    <string name="text_personalId">Cédula </string>
+    <string name="text_accountId">Account </string>
+    <string name="text_balance">Balance </string>
+    <string name="text_value">_value</string>
+
 
     <!--Strings related to BASIC ACTIONS-->
     <string name="action_login">LogIn</string>
     <string name="action_signup">SignUp</string>
     <string name="action_create_account">Create Account</string>
+    <string name="action_logout">Logout</string>
 
 
     <string name="title_activity_user_menu">UserMenuActivity</string>
