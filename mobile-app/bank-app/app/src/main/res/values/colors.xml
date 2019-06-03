@@ -12,5 +12,7 @@
     <color name="colorNotification">#FFAA00</color>
     <color name="colorError">#FF3F0F</color>
 
+    <color name="shadow">#AFAFAF</color>
+
 
 </resources>

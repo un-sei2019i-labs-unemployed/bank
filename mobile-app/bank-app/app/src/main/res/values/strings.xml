@@ -10,13 +10,20 @@
     <string name="field_full_name">Full Name</string>
     <string name="field_personalID">Personal ID</string>
     <string name="field_password">Password</string>
+    <string name="field_accountID">Account ID</string>
 
     <!--Strings related to TEXT-->
+    <string name="text_value">_value</string>
+
     <string name="text_name">Nombre </string>
     <string name="text_personalId">Cédula </string>
     <string name="text_accountId">Account </string>
     <string name="text_balance">Balance </string>
-    <string name="text_value">_value</string>
+
+    <string name="text_transaction">DATOS DE LA TRANSACCIÓN</string>
+    <string name="text_targetUser">INFORMACIÓN DEL USUARIO DESTINO</string>
+    <string name="text_ammount">CANTIDAD</string>
+    <string name="text_tansactionValue">Cantidad</string>
 
 
     <!--Strings related to BASIC ACTIONS-->
@@ -24,12 +31,13 @@
     <string name="action_signup">SignUp</string>
     <string name="action_create_account">Create Account</string>
     <string name="action_logout">Logout</string>
+    <string name="action_send">Send</string>
 
 
     <string name="title_activity_user_menu">UserMenuActivity</string>
     <string name="title_activity_create_account">CreateAccountActivity</string>
 
-    <!--Strings related to MENU ACTIONS-->
+    <!--Strings related to MENU TITLES-->
     <string name="title_home">Profile</string>
     <string name="title_dashboard">Transactions</string>
     <string name="title_notifications">Notifications</string>

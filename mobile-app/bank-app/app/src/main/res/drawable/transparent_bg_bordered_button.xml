@@ -4,4 +4,6 @@
         android:bottom="0dp"
         android:drawable="@drawable/transparent_bg_bordered"
         android:top="0dp" />
+
 </layer-list>
+

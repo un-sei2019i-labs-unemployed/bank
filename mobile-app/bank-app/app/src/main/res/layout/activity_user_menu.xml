@@ -9,7 +9,7 @@
     tools:context=".ui.UserMenuActivity">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/title_panel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
@@ -23,14 +23,15 @@
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@drawable/transparent_bg_bordered_button"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
     <Button
-        android:id="@+id/LogoutButton"
+        android:id="@+id/menu_button_logout"
         android:layout_width="68dp"
         android:layout_height="26dp"
         android:layout_marginTop="16dp"
@@ -54,7 +55,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
+        app:layout_constraintTop_toBottomOf="@+id/title_panel"
         tools:visibility="visible" />
 
     <TextView
@@ -142,5 +143,111 @@
         android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textName"
         app:layout_constraintStart_toEndOf="@+id/textName" />
+
+
+    <LinearLayout
+        android:id="@+id/transaction_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/title_panel">
+
+        <TextView
+            android:id="@+id/transaction_text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/text_transaction"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/transaction_text_targetUserInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_targetUser"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/transaction_textInputLayout_accountID"
+            android:layout_width="185dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            app:layout_constraintTop_toBottomOf="@+id/transaction_text_targetUserInfo"
+            tools:layout_editor_absoluteX="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/transaction_input_accountID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_accountID"
+                android:inputType="number"
+                android:textColor="@color/colorAccent"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="14sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/transaction_text_ammount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_ammount"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/transaction_textInputLayout_ammount"
+            android:layout_width="185dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            tools:layout_editor_absoluteX="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/transaction_input_ammount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_tansactionValue"
+                android:inputType="number"
+                android:textColor="@color/colorAccent"
+                android:textColorLink="@color/colorAccent"
+                android:textSize="14sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/transaction_button_send"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorAccent"
+            android:text="@string/action_send"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
