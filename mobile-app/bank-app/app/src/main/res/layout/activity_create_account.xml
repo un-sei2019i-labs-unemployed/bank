@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/action_signup" />
+</android.support.design.widget.AppBarLayout>-->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/singin_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorBackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/singup_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/action_signup"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <!--<TextView
+            android:id="@+id/fstTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/field_full_name" />
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorAccent" />
+            -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signup_textInputLayout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signup_input_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_full_name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent"
+                android:textColorLink="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<TextView
+            android:id="@+id/secTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/field_personalID" />
+
+        <EditText
+            android:id="@+id/txtPersonal_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textColorLink="@color/colorAccent" />
+            -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signup_textInputLayout_personalID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signup_input_personalID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_personalID"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/colorAccent"
+                android:textColorLink="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<TextView
+            android:id="@+id/thirdTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/field_password" />
+
+        <EditText
+            android:id="@+id/txtPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberPassword" />
+            -->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/login_textInputLayout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorAccent">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signup_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/field_password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/colorAccent"
+                android:textColorLink="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/signup_button_createAccount"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/transparent_bg_bordered_button"
+            android:text="@string/action_create_account"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/signup_text_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/action_login"
+            android:textColor="@color/colorAccent"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>
