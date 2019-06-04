@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
 import com.example.bank_app.dataAccess.databases.Database;
+import com.example.bank_app.dataAccess.databases.QueryUtilities;
 import com.example.bank_app.dataAccess.models.User;
 
 import java.io.IOException;
@@ -68,10 +69,8 @@ public class UsersRepository {
 
     public boolean insertUser(int id, String name, int pass){
         try{
-            // SQL Statement
             setUser(new User(id,name,pass));
-            String insert = "insert into Usuario values("+id+",'"+name+"',"+pass+")";
-            mDb.execSQL(insert);
+            QueryUtilities.insertUser(mDb,id,name,pass);
             return true;
         }catch(SQLiteException e){
             return false;
@@ -87,8 +86,7 @@ public class UsersRepository {
     }
     public boolean readUser(int personal_id){
         try{
-            String select = "select * from Usuario where _id ="+personal_id;
-            Cursor query = mDb.rawQuery(select,null);
+            Cursor query = QueryUtilities.userQuery(mDb,personal_id);
             if(query.moveToFirst()){
                 int _id = query.getInt(0);
                 String name = query.getString(1);

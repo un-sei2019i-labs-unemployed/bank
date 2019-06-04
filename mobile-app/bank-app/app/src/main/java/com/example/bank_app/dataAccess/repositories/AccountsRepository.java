@@ -6,11 +6,10 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
-import java.util.Date;
 
 import com.example.bank_app.dataAccess.databases.Database;
+import com.example.bank_app.dataAccess.databases.QueryUtilities;
 import com.example.bank_app.dataAccess.models.Account;
-import com.example.bank_app.dataAccess.models.User;
 
 import java.io.IOException;
 
@@ -64,8 +63,7 @@ public class AccountsRepository {
 
     public boolean getAccountById(int acountOwner){
         try{
-            String select = "select * from Cuenta where propietario ="+acountOwner;
-            Cursor query = mDb.rawQuery(select,null);
+            Cursor query = QueryUtilities.accountQueryByID(mDb,acountOwner);
             if(query.moveToFirst()){
                 int _id = query.getInt(0);
                 int balance = query.getInt(1);
@@ -83,8 +81,7 @@ public class AccountsRepository {
 
     public int getAccountExistingId(int acountID){
         try{
-            String select = "select _id from Cuenta where _id ="+acountID;
-            Cursor query = mDb.rawQuery(select,null);
+            Cursor query = QueryUtilities.accountQueryByExistingID(mDb,acountID);
             if(query.moveToFirst()){
                 int _id = query.getInt(0);
                 return _id;
@@ -97,8 +94,7 @@ public class AccountsRepository {
 
     public int getAccountOwnerById(int acountID){
         try{
-            String select = "select propietario from Cuenta where _id ="+acountID;
-            Cursor query = mDb.rawQuery(select,null);
+            Cursor query = QueryUtilities.accountQueryByOwner(mDb,acountID);
             if(query.moveToFirst()){
                 int _id = query.getInt(0);
                 return _id;
@@ -111,8 +107,7 @@ public class AccountsRepository {
 
     public int getAccountNumber(){
         try{
-            String select = "select * from NoCuentas";
-            Cursor query = mDb.rawQuery(select,null);
+            Cursor query = QueryUtilities.accountNumber(mDb);
             if(query.moveToFirst()){
                 int number = query.getInt(0);
                 return number;
@@ -125,8 +120,7 @@ public class AccountsRepository {
 
     public boolean updateAccount(int newID, int owner){
         try{
-            String update = "UPDATE Cuenta set _id="+newID+" where propietario="+owner;
-            mDb.execSQL(update);
+            QueryUtilities.updateAccount(mDb,newID,owner);
             return true;
         }catch(SQLiteException e){
             return false;
@@ -135,8 +129,7 @@ public class AccountsRepository {
 
     public boolean recharge(int newBalance, int owner){
         try{
-            String update = "UPDATE Cuenta set saldo="+newBalance+" where propietario="+owner;
-            mDb.execSQL(update);
+            QueryUtilities.updateAccountBalance(mDb,newBalance,owner);
             return true;
         }catch(SQLiteException e){
             return false;

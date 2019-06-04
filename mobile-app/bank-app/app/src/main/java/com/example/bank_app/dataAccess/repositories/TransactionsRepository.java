@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
 import com.example.bank_app.dataAccess.databases.Database;
+
+import com.example.bank_app.dataAccess.databases.QueryUtilities;
 import com.example.bank_app.dataAccess.models.Transaction;
 
 import java.io.IOException;
@@ -66,9 +68,7 @@ public class TransactionsRepository {
 
     public boolean insertTransaction(int source, int target, int ammount, String status){
         try{
-            // SQL Statement
-            String insert = "insert into Transaccion(origen,destino,cantidad,estado) values("+source+","+target+","+ammount+", '"+status+"'"+")";
-            mDb.execSQL(insert);
+            QueryUtilities.insertTransaction(mDb, source, target, ammount, status);
             return true;
         }catch(SQLiteException e){
             error=e.getMessage();
