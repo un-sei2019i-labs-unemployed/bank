@@ -1,15 +1,29 @@
 package com.example.bank_app.dataAccess.models;
 
-import java.util.Date;
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Transient;
 
+import java.util.Date;
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity
 public class Transaction {
 
+    @Id
     private int id_transaction;
+    @Transient
     private Date date;
+    @Transient
     private int begin;
+    @Transient
     private int destination;
+    @Transient
     private int amount;
+    @Transient
     private String state;
+
+    public Transaction() {}
 
     public Transaction(int id_transaction, Date date, int begin, int destination, int amount, String state) {
         this.id_transaction = id_transaction;
@@ -24,6 +38,11 @@ public class Transaction {
         this.begin = begin;
         this.destination = destination;
         this.amount = amount;
+    }
+
+    @Generated(hash = 2018882728)
+    public Transaction(int id_transaction) {
+        this.id_transaction = id_transaction;
     }
 
     public String getState() {

@@ -4,14 +4,15 @@ import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
+
+import org.greenrobot.greendao.database.DatabaseOpenHelper;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class Database extends SQLiteOpenHelper {
+public class Database extends DatabaseOpenHelper {
 
     // /data/data/com.example.bank_app/databases/
     private static String DB_PATH = "";
@@ -24,6 +25,17 @@ public class Database extends SQLiteOpenHelper {
         super(context, DB_NAME, null, 1);
         this.myContext = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+    }
+
+    public Database(Context context,SQLiteDatabase.CursorFactory factory) {
+        super(context,DB_NAME,factory,1);
+        this.myContext = context;
+        DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+        try {
+            createDataBase();
+        } catch (Exception ioe) {
+            throw new Error("Unable to create database");
+        }
     }
 
     public void createDataBase() throws IOException {
