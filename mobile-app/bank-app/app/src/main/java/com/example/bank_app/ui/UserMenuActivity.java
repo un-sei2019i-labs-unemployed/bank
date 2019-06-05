@@ -186,29 +186,4 @@ public class UserMenuActivity extends AppCompatActivity {
         text_value_Balance.setText("$ "+Integer.toString(_accountData.getAccount().getBalance()));
     }
 
-    private void setProfilePanelVisibility(int _visibility){
-        textID.setVisibility(_visibility);
-        textName.setVisibility(_visibility);
-        textAccount.setVisibility(_visibility);
-        textBalance.setVisibility(_visibility);
-
-        text_value_ID.setVisibility(_visibility);
-        text_value_Name.setVisibility(_visibility);
-        text_value_Account.setVisibility(_visibility);
-        text_value_Balance.setVisibility(_visibility);
-    }
-    private void setTransactionPanelVisibility(int _visibility){
-
-        transactionLayout.setVisibility(_visibility);
-        textTransactionTitle.setVisibility(_visibility);
-        textTargetUserInfo.setVisibility(_visibility);
-        tilAccountID.setVisibility(_visibility);
-
-        tietAccountID.setVisibility(_visibility);
-        textAmmount.setVisibility(_visibility);
-        tilAmmount.setVisibility(_visibility);
-        tiedAmmount.setVisibility(_visibility);
-
-        transactionButtonSend.setVisibility(_visibility);
-    }
 }
