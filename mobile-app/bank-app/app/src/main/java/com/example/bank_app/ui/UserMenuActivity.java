@@ -8,6 +8,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Button;
@@ -33,6 +34,8 @@ public class UserMenuActivity extends AppCompatActivity {
 
     //Views para TRANSACTION Panel
     private LinearLayout transactionLayout;
+    private GridLayout profileLayout;
+
     private TextView textTransactionTitle, textTargetUserInfo, textAmmount;
     private TextInputLayout tilAccountID, tilAmmount;
     private TextInputEditText tietAccountID, tiedAmmount;
@@ -51,23 +54,24 @@ public class UserMenuActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
 
-                    setProfilePanelVisibility(View.VISIBLE);
-                    setTransactionPanelVisibility(View.INVISIBLE);
+                    profileLayout.setVisibility(View.VISIBLE);
+                    transactionLayout.setVisibility(View.INVISIBLE);
+
                     text_value_Balance.setText("$ "+Integer.toString(accountData.getAccount().getBalance()));
 
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
 
-                    setProfilePanelVisibility(View.INVISIBLE);
-                    setTransactionPanelVisibility(View.VISIBLE);
+                    profileLayout.setVisibility(View.INVISIBLE);
+                    transactionLayout.setVisibility(View.VISIBLE);
 
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);
 
-                    setProfilePanelVisibility(View.INVISIBLE);
-                    setTransactionPanelVisibility(View.INVISIBLE);
+                    profileLayout.setVisibility(View.INVISIBLE);
+                    transactionLayout.setVisibility(View.INVISIBLE);
 
                     return true;
             }
@@ -91,8 +95,11 @@ public class UserMenuActivity extends AppCompatActivity {
 
         initViews();
 
-        setProfilePanelVisibility(View.VISIBLE);
-        setTransactionPanelVisibility(View.INVISIBLE);
+        profileLayout.setVisibility(View.VISIBLE);
+        transactionLayout.setVisibility(View.INVISIBLE);
+
+        //setProfilePanelVisibility(View.VISIBLE);
+        //setTransactionPanelVisibility(View.INVISIBLE);
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -157,6 +164,7 @@ public class UserMenuActivity extends AppCompatActivity {
         buttonRecharge=findViewById(R.id.recharge);
 //=======================TRANSACTION
         transactionLayout = findViewById(R.id.transaction_linearLayout);
+        profileLayout = findViewById(R.id.profile_gridLayout);
 
             textTransactionTitle = findViewById(R.id.transaction_text_title);
             textTargetUserInfo = findViewById(R.id.transaction_text_targetUserInfo);
