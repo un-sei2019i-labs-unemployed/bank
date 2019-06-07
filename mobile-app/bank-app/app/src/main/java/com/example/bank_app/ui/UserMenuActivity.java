@@ -29,16 +29,15 @@ public class UserMenuActivity extends AppCompatActivity {
     private Button buttonLogout, buttonRecharge;
 
     //Views para Profile Panel
-    private TextView mTextMessage, textID, textName, textAccount, textBalance;
+    private TextView mTextMessage;
     private TextView text_value_ID, text_value_Name, text_value_Account, text_value_Balance;
 
     //Views para TRANSACTION Panel
     private LinearLayout transactionLayout;
     private GridLayout profileLayout;
 
-    private TextView textTransactionTitle, textTargetUserInfo, textAmmount;
-    private TextInputLayout tilAccountID, tilAmmount;
-    private TextInputEditText tietAccountID, tiedAmmount;
+    private TextInputLayout tilAccountID, tilAmount;
+    private TextInputEditText tietAccountID, tiedAmount;
     private Button transactionButtonSend;
     private Message message;
 
@@ -120,7 +119,7 @@ public class UserMenuActivity extends AppCompatActivity {
                     {
                         if(transactionButtonSend.getVisibility()==View.VISIBLE) {
                             dialog = message.waiting("Authenticating", UserMenuActivity.this);
-                            validateTransaction(currentUser.getPersonal_id(),tietAccountID.getText().toString(), tiedAmmount.getText().toString(),accountData.getAccount().getBalance());
+                            validateTransaction(currentUser.getPersonal_id(),tietAccountID.getText().toString(), tiedAmount.getText().toString(),accountData.getAccount().getBalance());
                         }
                     }
                 });
@@ -141,8 +140,8 @@ public class UserMenuActivity extends AppCompatActivity {
             message.alert(msg,this);
         }else if(msg.equalsIgnoreCase("Enter a valid Account ID")){
             tilAccountID.setError(msg);
-        }else if(msg.equalsIgnoreCase("There isn't a valid ammount")){
-            tilAmmount.setError(msg);
+        }else if(msg.equalsIgnoreCase("There isn't a valid amount")){
+            tilAmount.setError(msg);
         }else{
             message.alert(msg,this);
         }
@@ -150,10 +149,6 @@ public class UserMenuActivity extends AppCompatActivity {
 
     private void initViews(){
         mTextMessage = findViewById(R.id.title_panel);
-        textID = findViewById(R.id.textID);
-        textName = findViewById(R.id.textName);
-        textAccount = findViewById(R.id.textAcount);
-        textBalance = findViewById(R.id.textBalance);
 
         text_value_ID = findViewById(R.id.text_value_personalId);
         text_value_Name = findViewById(R.id.text_value_name);
@@ -166,16 +161,12 @@ public class UserMenuActivity extends AppCompatActivity {
         transactionLayout = findViewById(R.id.transaction_linearLayout);
         profileLayout = findViewById(R.id.profile_gridLayout);
 
-            textTransactionTitle = findViewById(R.id.transaction_text_title);
-            textTargetUserInfo = findViewById(R.id.transaction_text_targetUserInfo);
 
                 tilAccountID = findViewById(R.id.transaction_textInputLayout_accountID);
                 tietAccountID = findViewById(R.id.transaction_input_accountID);
 
-            textAmmount = findViewById(R.id.transaction_text_ammount);
-
-                tilAmmount = findViewById(R.id.transaction_textInputLayout_ammount);
-                tiedAmmount = findViewById(R.id.transaction_input_ammount);
+                tilAmount = findViewById(R.id.transaction_textInputLayout_amount);
+                tiedAmount = findViewById(R.id.transaction_input_amount);
 
             transactionButtonSend = findViewById(R.id.transaction_button_send);
     }
