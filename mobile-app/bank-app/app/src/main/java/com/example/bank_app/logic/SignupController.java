@@ -5,12 +5,12 @@ import android.content.Context;
 import com.example.bank_app.dataAccess.models.*;
 import com.example.bank_app.dataAccess.repositories.*;
 
-public class Signup {
+public class SignupController {
 
     private UsersRepository provUser;
     private AccountsRepository provAccount;
 
-    public Signup(Context context) {
+    public SignupController(Context context) {
         this.provUser = new UsersRepository(context);
         this.provAccount = new AccountsRepository(context);
     }

@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.bank_app.R;
 import com.example.bank_app.logic.Message;
-import com.example.bank_app.logic.Signup;
+import com.example.bank_app.logic.SignupController;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private TextView _logIn;
 
-    private Signup signup; //usado para verificar que no existe otro ususario con el  id a registrar.
+    private SignupController signup; //usado para verificar que no existe otro ususario con el  id a registrar.
 
     private Message message;
 
@@ -81,7 +81,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void CreateAccount(String name, String personal_id, String password){
-        signup = new Signup(this); //context used for the path and get the database dir in Database class.
+        signup = new SignupController(this); //context used for the path and get the database dir in Database class.
 
         String msg = signup.IsVerified(name, personal_id, password);
 
@@ -118,7 +118,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         builder.setMessage("Now you can use our services.");
         builder.setCancelable(true);
 
-        builder.setPositiveButton("Back to Login",new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Back to login",new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 goToLogin();

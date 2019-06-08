@@ -6,11 +6,11 @@ import com.example.bank_app.dataAccess.models.Account;
 import com.example.bank_app.dataAccess.models.Transaction;
 import com.example.bank_app.dataAccess.repositories.*;
 
-public class TransactionHandler {
+public class TransactionController {
     private TransactionsRepository provTransaction;
     private AccountsRepository provAccount;
 
-    public TransactionHandler(Context context) {
+    public TransactionController(Context context) {
         this.provTransaction = new TransactionsRepository(context);
         this.provAccount = new AccountsRepository(context);
     }
@@ -19,7 +19,7 @@ public class TransactionHandler {
 
     public Account getAccount(){ return provAccount.getAccount(); }
 
-    private Transaction login(int personal_id){
+    private Transaction checkTransaction(int personal_id){
         provTransaction.createTable();
         provTransaction.open();
         if (provTransaction.readTransaction(personal_id)){

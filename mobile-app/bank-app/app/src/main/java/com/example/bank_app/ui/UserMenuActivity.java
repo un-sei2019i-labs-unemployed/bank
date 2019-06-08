@@ -22,8 +22,8 @@ import com.example.bank_app.logic.*;
 import static com.example.bank_app.ui.LoginActivity.logedUser;
 
 public class UserMenuActivity extends AppCompatActivity {
-    ViewUser accountData;
-    TransactionHandler transaction;
+    AccountAutenticatorController accountData;
+    TransactionController transaction;
     private User currentUser;
 
     private Button buttonLogout, buttonRecharge;
@@ -84,7 +84,7 @@ public class UserMenuActivity extends AppCompatActivity {
 
         currentUser = logedUser;
 
-        accountData = new ViewUser(this);
+        accountData = new AccountAutenticatorController(this);
         accountData.viewAccount(currentUser.getPersonal_id());
 
         setContentView(R.layout.activity_user_menu);
@@ -132,7 +132,7 @@ public class UserMenuActivity extends AppCompatActivity {
     }
 
     private void validateTransaction(int origin,String accountID, String amount, int currentBalance){
-        transaction =new TransactionHandler(this);
+        transaction =new TransactionController(this);
         String msg = transaction.isVerified(origin, accountID,amount,currentBalance);
         dialog.dismiss();
 
@@ -170,7 +170,7 @@ public class UserMenuActivity extends AppCompatActivity {
 
             transactionButtonSend = findViewById(R.id.transaction_button_send);
     }
-    private void setValues(User _currentUser, ViewUser _accountData){
+    private void setValues(User _currentUser, AccountAutenticatorController _accountData){
         text_value_ID.setText( Integer.toString(_currentUser.getPersonal_id()) );
         text_value_Name.setText(_currentUser.getName());
         text_value_Account.setText(Integer.toString(_accountData.getAccount().getNo_accoun()));

@@ -14,7 +14,7 @@ import com.example.bank_app.dataAccess.models.User;
 
 import com.example.bank_app.R;
 
-import com.example.bank_app.logic.Login;
+import com.example.bank_app.logic.LoginController;
 import com.example.bank_app.logic.Message;
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView _singUp;
 
-    private Login login;
+    private LoginController login;
 
     private Message message;
 
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void LocalLogin(String personal_id, String password){
-        login = new Login(this);
+        login = new LoginController(this);
 
         String msg = login.isAuthenticated(personal_id, password);
         dialog.dismiss();

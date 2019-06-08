@@ -5,11 +5,11 @@ import android.content.Context;
 import com.example.bank_app.dataAccess.models.User;
 import com.example.bank_app.dataAccess.repositories.UsersRepository;
 
-public class Login {
+public class LoginController {
 
     private UsersRepository provUser;
 
-    public Login(Context context) {
+    public LoginController(Context context) {
         this.provUser = new UsersRepository(context);
     }
 

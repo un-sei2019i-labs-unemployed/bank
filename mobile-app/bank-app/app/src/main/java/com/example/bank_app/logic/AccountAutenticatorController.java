@@ -5,10 +5,10 @@ import android.content.Context;
 import com.example.bank_app.dataAccess.models.*;
 import com.example.bank_app.dataAccess.repositories.AccountsRepository;
 
-public class ViewUser {
+public class AccountAutenticatorController {
     private AccountsRepository provAccount;
 
-    public ViewUser(Context context) {
+    public AccountAutenticatorController(Context context) {
         this.provAccount = new AccountsRepository(context);
     }
 
