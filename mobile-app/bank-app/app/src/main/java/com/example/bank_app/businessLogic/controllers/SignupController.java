@@ -1,4 +1,4 @@
-package com.example.bank_app.logic;
+package com.example.bank_app.businessLogic.controllers;
 
 import android.content.Context;
 

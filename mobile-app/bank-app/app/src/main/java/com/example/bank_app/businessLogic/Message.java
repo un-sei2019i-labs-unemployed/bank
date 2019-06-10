@@ -1,4 +1,4 @@
-package com.example.bank_app.logic;
+package com.example.bank_app.businessLogic;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;

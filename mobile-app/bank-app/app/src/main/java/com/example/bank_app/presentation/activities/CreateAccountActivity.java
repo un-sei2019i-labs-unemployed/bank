@@ -1,4 +1,4 @@
-package com.example.bank_app.ui;
+package com.example.bank_app.presentation.activities;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.bank_app.R;
-import com.example.bank_app.logic.Message;
-import com.example.bank_app.logic.SignupController;
+import com.example.bank_app.businessLogic.Message;
+import com.example.bank_app.businessLogic.controllers.SignupController;
 
 public class CreateAccountActivity extends AppCompatActivity {
 

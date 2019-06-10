@@ -1,4 +1,4 @@
-package com.example.bank_app.ui;
+package com.example.bank_app.presentation.activities;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -14,12 +14,15 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
+
+import com.example.bank_app.businessLogic.controllers.AccountAutenticatorController;
+import com.example.bank_app.businessLogic.controllers.TransactionController;
 import com.example.bank_app.dataAccess.models.User;
 
 import com.example.bank_app.R;
-import com.example.bank_app.logic.*;
+import com.example.bank_app.businessLogic.*;
 
-import static com.example.bank_app.ui.LoginActivity.logedUser;
+import static com.example.bank_app.presentation.activities.LoginActivity.logedUser;
 
 public class UserMenuActivity extends AppCompatActivity {
     AccountAutenticatorController accountData;

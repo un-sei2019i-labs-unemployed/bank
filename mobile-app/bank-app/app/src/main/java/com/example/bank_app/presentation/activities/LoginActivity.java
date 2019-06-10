@@ -1,4 +1,4 @@
-package com.example.bank_app.ui;
+package com.example.bank_app.presentation.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,8 +14,8 @@ import com.example.bank_app.dataAccess.models.User;
 
 import com.example.bank_app.R;
 
-import com.example.bank_app.logic.LoginController;
-import com.example.bank_app.logic.Message;
+import com.example.bank_app.businessLogic.controllers.LoginController;
+import com.example.bank_app.businessLogic.Message;
 
 public class LoginActivity extends AppCompatActivity {
     public static User logedUser;
